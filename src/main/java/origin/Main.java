@@ -46,8 +46,8 @@ public class Main {
             while (resultSet.next()) {
                 int id = resultSet.getInt("ID");
                 String lesson = resultSet.getString("LESSON");
-                Time start = resultSet.getTime("START"); // Correct handling of time type data
-                Time finish = resultSet.getTime("FINISH"); // Correct handling of time type data
+                String start = resultSet.getString("START"); // Correct handling of time type data
+                String finish = resultSet.getString("FINISH"); // Correct handling of time type data
                 String student = resultSet.getString("STUDENT");
                 int grade = resultSet.getInt("GRADE");
 
@@ -75,8 +75,8 @@ public class Main {
              PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
 
             preparedStatement.setString(1, lessonName);
-            preparedStatement.setString(2, startTime + ":00");
-            preparedStatement.setString(3, endTime + ":00");
+            preparedStatement.setString(2, "time(" + startTime + ":00)");
+            preparedStatement.setString(3, "time(" + endTime + ":00)");
 
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {

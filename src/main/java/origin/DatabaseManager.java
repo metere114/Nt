@@ -9,8 +9,8 @@ public class DatabaseManager {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS LESSONS (" +
                 "ID INT AUTO_INCREMENT PRIMARY KEY, " +
                 "LESSON VARCHAR(255), " +
-                "START TIME, " +
-                "FINISH TIME, " +
+                "START TEXT, " +
+                "FINISH TEXT, " +
                 "STUDENT VARCHAR(255), " +
                 "GRADE INT);";
         try (Connection conn = getConnection();
