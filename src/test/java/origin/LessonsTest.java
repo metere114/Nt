@@ -2,7 +2,6 @@ package origin;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.sql.Time;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LessonsTest {
@@ -10,8 +9,8 @@ public class LessonsTest {
     private Lessons lesson;
     private final int id = 1;
     private final String lessonName = "Math";
-    private final Time startTime = Time.valueOf("08:00:00");
-    private final Time finishTime = Time.valueOf("09:00:00");
+    private final String startTime = "08:00:00";
+    private final String finishTime = "09:00:00";
     private final String studentName = "John Doe";
     private final int grade = 5;
 
@@ -39,8 +38,8 @@ public class LessonsTest {
     void testSetters() {
         int newId = 2;
         String newLessonName = "Science";
-        Time newStartTime = Time.valueOf("10:00:00");
-        Time newFinishTime = Time.valueOf("11:00:00");
+        String newStartTime = "10:00:00";
+        String newFinishTime = "11:00:00";
         String newStudentName = "Alice Smith";
         int newGrade = 4;
 
